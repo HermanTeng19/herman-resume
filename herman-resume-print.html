@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herman Teng - Resume</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+            font-size: 11pt;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 1rem;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info {
+            font-size: 10pt;
+            color: #64748b;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .section {
+            margin-bottom: 1.5rem;
+            break-inside: avoid;
+        }
+        
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1e40af;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .experience-item {
+            margin-bottom: 1.2rem;
+            break-inside: avoid;
+        }
+        
+        .job-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 0.2rem;
+        }
+        
+        .company-info {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+        
+        .achievements {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .achievements li {
+            margin-bottom: 0.3rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+        
+        .achievements li:before {
+            content: "•";
+            color: #2563eb;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .skill-category {
+            margin-bottom: 1rem;
+        }
+        
+        .skill-category h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 0.4rem;
+        }
+        
+        .skill-list {
+            font-size: 0.9rem;
+            color: #64748b;
+            line-height: 1.4;
+        }
+        
+        .competencies {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .competency-item {
+            background: #f8fafc;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            border-left: 3px solid #2563eb;
+        }
+        
+        .summary-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #374151;
+            text-align: justify;
+        }
+        
+        .achievements-highlight {
+            background: #f0f9ff;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid #2563eb;
+            margin-bottom: 1rem;
+        }
+        
+        .achievements-highlight ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .achievements-highlight li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .achievements-highlight li:before {
+            content: "🏆";
+            position: absolute;
+            left: 0;
+        }
+        
+        .print-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+        
+        .print-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background-color 0.2s;
+        }
+        
+        .print-btn:hover {
+            background: #1d4ed8;
+        }
+        
+        .back-btn {
+            background: #64748b;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        
+        .back-btn:hover {
+            background: #475569;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 0.3in;
+                font-size: 10pt;
+            }
+            
+            .print-controls {
+                display: none;
+            }
+            
+            .section {
+                break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+            
+            .experience-item {
+                break-inside: avoid;
+                margin-bottom: 0.8rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header h2 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Print Controls -->
+    <div class="print-controls">
+        <button class="print-btn" onclick="window.print()">
+            <i data-lucide="printer" class="w-4 h-4"></i>
+            Print Resume
+        </button>
+        <a href="herman-resume-website.html" class="back-btn">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            Back to Resume
+        </a>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Herman Teng</h1>
+        <h2>Senior Azure Data Engineer</h2>
+        <div class="contact-info">
+            <span>herman.teng@outlook.com</span>
+            <span>|</span>
+            <span>linkedin.com/in/hermanteng</span>
+            <span>|</span>
+            <span>github.com/HermanTeng19</span>
+            <span>|</span>
+            <span>hermanteng19.github.io</span>
+            <span>|</span>
+            <span>666-666-6666</span>
+        </div>
+    </div>
+
+    <!-- Professional Summary -->
+    <div class="section">
+        <h3 class="section-title">Professional Summary</h3>
+        <p class="summary-text">
+            <strong>Microsoft Azure Certified Data Engineer</strong> with <strong>10+ years</strong> of enterprise-scale data engineering and business intelligence experience in banking and finance. Expert in <strong>Azure Cloud Platform</strong> with proven track record of delivering high-performance data solutions supporting <strong>$2B+</strong> daily transaction processing across TD Bank's major business units.
+        </p>
+        <br>
+        <p class="summary-text">
+            <strong>Core Expertise:</strong> Python/PySpark Development • Azure Databricks & Data Factory • Power BI & Tableau Leadership • Enterprise Data Governance • Cost Optimization • Machine Learning Operations • Real-time Analytics
+        </p>
+        <br>
+        <p class="summary-text">
+            <strong>Industry Impact:</strong> Led enterprise-wide BI platform adoption serving <strong>10M+ customers</strong> • Managed <strong>10TB+ daily data volumes</strong> • Achieved <strong>99.9% system availability</strong> • Spearheaded AI/ML model deployment with <strong>99.95% uptime</strong>
+        </p>
+    </div>
+
+    <!-- Key Achievements -->
+    <div class="section">
+        <h3 class="section-title">🏆 Key Achievements</h3>
+        <div class="achievements-highlight">
+            <ul>
+                <li><strong>Cost Optimization Expert:</strong> Achieved <strong>35% Azure cost reduction</strong> and <strong>70% performance improvement</strong> across enterprise data systems</li>
+                <li><strong>Enterprise Scale Leadership:</strong> Managed <strong>$2B+ daily transaction processing</strong> with <strong>99.9% system availability</strong> across <strong>15+ business units</strong></li>
+                <li><strong>Big Data Processing:</strong> Engineered pipelines handling <strong>10TB+ daily data volumes</strong> serving <strong>10M+ banking customers</strong></li>
+                <li><strong>AI/ML Implementation:</strong> Deployed production AI models on Azure Kubernetes Services with <strong>99.95% uptime</strong> supporting <strong>500+ concurrent users</strong></li>
+                <li><strong>Business Intelligence Leadership:</strong> Led <strong>25+ Tableau dashboards</strong> and enterprise-wide <strong>Power BI adoption</strong> across multiple business units</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Core Competencies -->
+    <div class="section">
+        <h3 class="section-title">Core Competencies</h3>
+        <div class="competencies">
+            <div class="competency-item">Azure Cloud Architecture</div>
+            <div class="competency-item">Big Data Processing</div>
+            <div class="competency-item">Machine Learning Operations</div>
+            <div class="competency-item">Data Pipeline Engineering</div>
+            <div class="competency-item">Business Intelligence Leadership</div>
+            <div class="competency-item">Cost Optimization</div>
+            <div class="competency-item">Enterprise Data Governance</div>
+            <div class="competency-item">Real-time Analytics</div>
+            <div class="competency-item">DevOps Implementation</div>
+            <div class="competency-item">Cross-functional Team Leadership</div>
+            <div class="competency-item">Banking & Finance Domain</div>
+            <div class="competency-item">Regulatory Compliance</div>
+        </div>
+    </div>
+
+    <!-- Education & Certifications -->
+    <div class="section">
+        <h3 class="section-title">Education & Certifications</h3>
+        <div class="achievements">
+            <li><strong>Master of Science in Mathematics</strong> | Queens College, City University of New York</li>
+            <li><strong>Bachelor of Management in Marketing</strong> | Dalian Jiaotong University</li>
+            <li><strong>Microsoft Azure Certified Data Engineer Associate</strong> | Azure Data Fundamentals Certified</li>
+        </div>
+    </div>
+
+    <!-- Technical Skills -->
+    <div class="section">
+        <h3 class="section-title">Technical Skills</h3>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Cloud & Data Platforms</h4>
+                <div class="skill-list">
+                    <strong>Azure Cloud Ecosystem:</strong> Databricks • Data Factory • Kubernetes Services (AKS) • SQL Database • Synapse Analytics • ADLS • Purview • Cognitive Services<br>
+                    <strong>Big Data Technologies:</strong> Databricks Delta Lakes • Lakehouse Architecture • Apache Spark • Real-time & Batch Processing • Apache Hudi<br>
+                    <strong>Database Systems:</strong> SQL Server • Oracle • MySQL • DB2 • ACID Transaction Management
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>Programming & Development</h4>
+                <div class="skill-list">
+                    <strong>Core Languages:</strong> Python • PySpark • Spark SQL • T-SQL • BASH Shell Script • PowerShell<br>
+                    <strong>Data Engineering:</strong> ETL/ELT Pipelines • Schema Evolution • Data Versioning • Performance Optimization • MLOps<br>
+                    <strong>DevOps & CI/CD:</strong> Git • GitHub Enterprise • Bitbucket • Azure DevOps • Kubernetes Orchestration
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>Business Intelligence & Analytics</h4>
+                <div class="skill-list">
+                    <strong>Visualization Platforms:</strong> Power BI (Enterprise Leadership) • Tableau (25+ Dashboards) • Excel Advanced Analytics<br>
+                    <strong>Data Modeling:</strong> Dimensional Models • Entity Relationship Diagrams • Data Governance Frameworks • Metadata Management<br>
+                    <strong>Analytics & AI:</strong> Data Mining • Statistical Analysis • ML Model Deployment • Predictive Analytics • AI Model Operations
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>Enterprise Systems & Compliance</h4>
+                <div class="skill-list">
+                    <strong>Project Management:</strong> Agile Methodology • Jira • Confluence • Cross-functional Team Leadership • Stakeholder Management<br>
+                    <strong>Operating Systems:</strong> Linux (RHEL, Ubuntu) • Windows Server • AIX • HP Unix<br>
+                    <strong>Compliance & Governance:</strong> GDPR • SOX • Banking Regulations • Audit Trail Management • Data Privacy
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Professional Experience -->
+    <div class="section">
+        <h3 class="section-title">Professional Experience</h3>
+        
+        <div class="experience-item">
+            <div class="job-title">Senior Data Engineer (IT Data Specialist)</div>
+            <div class="company-info">May 2021 – Present | Data as a Service (DaaS) | TD Bank</div>
+            <ul class="achievements">
+                <li><strong>Enterprise BI Leadership:</strong> Spearheaded enterprise-wide Power BI adoption as primary analytics platform, establishing standardized frameworks across 15+ business units with 99.9% system availability</li>
+                <li><strong>Strategic Platform Implementation:</strong> Pioneered early Power BI implementation aligned with senior leadership roadmap, developing comprehensive data curation and access control frameworks</li>
+                <li><strong>Tableau Excellence:</strong> Managed comprehensive development and optimization of 25+ critical BI dashboards serving Canadian Personal Banking operations with 10M+ customers</li>
+                <li><strong>Performance Optimization:</strong> Implemented advanced processing algorithms achieving 95% data accuracy improvement, 70% faster report generation</li>
+                <li><strong>Cost Management:</strong> Achieved 35% reduction in monthly Azure service costs through intelligent resource allocation and automated scaling policies</li>
+                <li><strong>AI/ML Implementation:</strong> Developed comprehensive P.I. data re-identification system using Azure Cognitive Services, enhancing data privacy compliance</li>
+                <li><strong>Big Data Engineering:</strong> Engineered high-performance data processing pipelines using Python, PySpark, and Apache Spark on Azure Databricks, handling 10TB+ daily volumes</li>
+                <li><strong>Kubernetes Operations:</strong> Orchestrated enterprise AI model deployment on Azure Kubernetes Services with auto-scaling, ensuring 99.95% uptime for 500+ concurrent users</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-title">Senior Data Analyst (Senior Business Information Management Analyst)</div>
+            <div class="company-info">August 2017 – May 2021 | Canadian Personal Banking | TD Bank</div>
+            <ul class="achievements">
+                <li><strong>Enterprise Infrastructure:</strong> Developed and maintained enterprise-scale BI infrastructure supporting 8M+ customers with 99.5% system availability</li>
+                <li><strong>Digital Transformation:</strong> Applied advanced automation strategies to data platform modernization, leading 12+ development projects with 40% improvement in efficiency</li>
+                <li><strong>Infrastructure Monitoring:</strong> Continuously monitored critical infrastructure performance, maintaining 99.8% SLA compliance</li>
+                <li><strong>Data Integration:</strong> Conducted comprehensive analysis on 50+ new data feeds, enriching existing BI infrastructure and enabling advanced analytics capabilities</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-title">Data Analyst (Business Information Management Analyst)</div>
+            <div class="company-info">November 2015 – August 2017 | Canadian Personal Banking | TD Bank</div>
+            <ul class="achievements">
+                <li><strong>BI Infrastructure:</strong> Developed and maintained sophisticated Business Intelligence infrastructure and data warehouse for optimized analysis</li>
+                <li><strong>Solution Design:</strong> Provided technical insights and solutions according to business requirements, leading execution from design to deployment</li>
+                <li><strong>Data Analysis:</strong> Performed comprehensive data analysis on new data feeds to enrich existing BI infrastructure</li>
+                <li><strong>System Monitoring:</strong> Continuously monitored infrastructure health, scheduled processing, and capacity management</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Projects & Achievements -->
+    <div class="section">
+        <h3 class="section-title">Projects & Achievements</h3>
+        
+        <div class="experience-item">
+            <div class="job-title">Enterprise AI/ML Platform Deployment</div>
+            <ul class="achievements">
+                <li>Deployed production-ready AI models on Azure Kubernetes Services serving 10M+ banking customers</li>
+                <li>Achieved 99.95% uptime with automated scaling supporting 500+ concurrent users</li>
+                <li>Implemented comprehensive monitoring and alerting systems ensuring optimal performance</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-title">Cost Optimization Initiative</div>
+            <ul class="achievements">
+                <li>Led cloud cost optimization strategy achieving 35% reduction in monthly Azure service costs</li>
+                <li>Implemented intelligent resource allocation and automated scaling policies</li>
+                <li>Developed efficient data storage management practices with significant annual savings</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-title">Data Governance Framework</div>
+            <ul class="achievements">
+                <li>Established enterprise data governance policies using Databricks Unity Catalog and Azure Purview</li>
+                <li>Ensured compliance with GDPR, SOX, and banking regulatory requirements</li>
+                <li>Maintained comprehensive audit trails for all data operations across 15+ business units</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Technical Writing & Thought Leadership -->
+    <div class="section">
+        <h3 class="section-title">Technical Writing & Thought Leadership</h3>
+        <div class="achievements">
+            <li><strong>Professional Blog:</strong> hermanteng19.github.io (25+ technical articles)</li>
+            <li><strong>GitHub Repository:</strong> github.com/HermanTeng19 (Open-source projects & code portfolio)</li>
+            <li><strong>Featured Articles:</strong> "Python Environment Setup for Implementation" • "Sandbox Solution for BI Reporting and Analytics" • "Hadoop Data Side Load from SQL Server"</li>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html> 

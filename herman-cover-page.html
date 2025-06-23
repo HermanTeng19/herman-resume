@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herman Teng - Azure Cloud Data Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-slow': 'bounce 3s infinite',
+                        'gradient': 'gradient 15s ease infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 100% 50%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 100%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes meshGradient {
+            0%, 100% { 
+                background: linear-gradient(45deg, #0f0f23, #1a1a2e, #16213e, #0f3460);
+            }
+            16.66% { 
+                background: linear-gradient(135deg, #0f0f23, #16213e, #1a1a2e, #533483);
+            }
+            33.33% { 
+                background: linear-gradient(225deg, #16213e, #0f3460, #0f0f23, #1a1a2e);
+            }
+            50% { 
+                background: linear-gradient(315deg, #0f3460, #16213e, #533483, #0f0f23);
+            }
+            66.66% { 
+                background: linear-gradient(45deg, #533483, #0f0f23, #16213e, #0f3460);
+            }
+            83.33% { 
+                background: linear-gradient(135deg, #1a1a2e, #533483, #0f3460, #16213e);
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #a855f7 50%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: gradient 4s ease infinite;
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .animated-bg {
+            background-size: 400% 400%;
+            animation: meshGradient 20s ease infinite;
+            position: relative;
+        }
+        
+        .animated-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(34, 197, 94, 0.1) 0%, transparent 50%);
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .quote-text {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .quote-text::before {
+            content: '"';
+            font-size: 4rem;
+            opacity: 0.2;
+            position: absolute;
+            left: -2rem;
+            top: -1rem;
+            background: linear-gradient(135deg, #60a5fa, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .quote-text::after {
+            content: '"';
+            font-size: 4rem;
+            opacity: 0.2;
+            position: absolute;
+            right: -2rem;
+            bottom: -2rem;
+            background: linear-gradient(135deg, #60a5fa, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .floating-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .orb-2 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #a855f7, #7c3aed);
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+        
+        .orb-3 {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: 4s;
+        }
+        
+        .building-showcase {
+            position: relative;
+        }
+        
+        @media (max-width: 768px) {
+            .floating-orb {
+                width: 120px !important;
+                height: 120px !important;
+            }
+            
+            .building-showcase {
+                padding: 1rem;
+                max-width: 95vw;
+            }
+            
+            .building-showcase .grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .building-showcase .md\:col-span-2 {
+                grid-column: span 1;
+            }
+            
+            .building-showcase img {
+                min-height: 200px;
+                max-height: 250px;
+            }
+            
+            /* Ensure content fits viewport */
+            body {
+                padding-bottom: 2rem;
+            }
+            
+            /* Adjust main container spacing */
+            .max-w-5xl {
+                padding-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="animated-bg text-white font-sans min-h-screen flex items-center justify-center overflow-hidden" id="body-bg">
+    <!-- Floating Background Elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="floating-orb orb-1"></div>
+        <div class="floating-orb orb-2"></div>
+        <div class="floating-orb orb-3"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="relative z-10 text-center max-w-5xl mx-auto px-4">
+        <!-- TD Banner Reference with Building Image -->
+        <div class="mb-4 opacity-90">
+            <div class="inline-flex items-center space-x-3 mb-4">
+                <div class="w-20 h-20 rounded-xl overflow-hidden shadow-lg">
+                    <img src="1.-Cover-e1727463705113.jpeg" 
+                         alt="TD Centre Toronto" 
+                         class="w-full h-full object-cover">
+                </div>
+                <span class="text-sm font-medium text-white/80 tracking-wider">TD BANK GROUP</span>
+            </div>
+        </div>
+
+        <!-- Main Title -->
+        <div class="mb-8">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                <span class="gradient-text">Herman Teng</span>
+            </h1>
+            
+            <!-- Professional Title -->
+            <div class="space-y-3 mb-6">
+                <h2 class="text-xl md:text-2xl font-light text-white/90">
+                    Azure Cloud Data Engineer
+                </h2>
+                <p class="text-base md:text-lg text-white/70">
+                    Platform & Technology
+                </p>
+            </div>
+
+            <!-- Company Info -->
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-8 mb-8">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="briefcase" class="w-4 h-4 text-white/60"></i>
+                    <span class="text-white/80 text-sm">TD Bank</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="pen-tool" class="w-4 h-4 text-white/60"></i>
+                    <span class="text-white/80 text-sm">Writer (Tech)</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="graduation-cap" class="w-4 h-4 text-white/60"></i>
+                    <span class="text-white/80 text-sm">Full-time Learner</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personal Philosophy -->
+        <div class="glass-effect rounded-2xl p-6 md:p-8 mb-8 max-w-4xl mx-auto">
+            <div class="mb-4">
+                <i data-lucide="heart" class="w-6 h-6 text-white/60 mx-auto"></i>
+            </div>
+            <p class="quote-text text-base md:text-lg leading-relaxed text-white/90 max-w-3xl mx-auto">
+                A man hear a little music, read a little novel, play a little soccer, 
+                find a little but beautiful thing every day of his life
+            </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+            <a href="https://hermanteng19.github.io" target="_blank" 
+               class="glass-effect hover:bg-white/20 px-6 py-3 rounded-full font-semibold transition-all transform hover:scale-105 border-2 border-white/30">
+                <div class="flex items-center justify-center space-x-2">
+                    <i data-lucide="user" class="w-4 h-4"></i>
+                    <span class="text-sm">Contact Me</span>
+                </div>
+            </a>
+            
+            <a href="herman-resume-website.html" 
+               class="bg-white/20 hover:bg-white/30 px-6 py-3 rounded-full font-semibold transition-all transform hover:scale-105 border-2 border-white/30">
+                <div class="flex items-center justify-center space-x-2">
+                    <i data-lucide="file-text" class="w-4 h-4"></i>
+                    <span class="text-sm">View Resume</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex justify-center space-x-4 mb-8">
+            <a href="https://linkedin.com/in/hermanteng" target="_blank" 
+               class="w-10 h-10 glass-effect rounded-full flex items-center justify-center hover:bg-white/20 transition-all transform hover:scale-110">
+                <i data-lucide="linkedin" class="w-4 h-4"></i>
+            </a>
+            
+            <a href="https://github.com/HermanTeng19" target="_blank" 
+               class="w-10 h-10 glass-effect rounded-full flex items-center justify-center hover:bg-white/20 transition-all transform hover:scale-110">
+                <i data-lucide="github" class="w-4 h-4"></i>
+            </a>
+            
+            <a href="mailto:herman.teng@outlook.com" 
+               class="w-10 h-10 glass-effect rounded-full flex items-center justify-center hover:bg-white/20 transition-all transform hover:scale-110">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+            </a>
+        </div>
+
+        <!-- Company Information Card -->
+        <div class="glass-effect rounded-3xl p-6 max-w-4xl mx-auto">
+            <div class="text-center">
+                <h3 class="text-lg font-semibold text-white/90 mb-2 flex items-center justify-center space-x-2">
+                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                    <span>Headquartered at TD Terrace</span>
+                </h3>
+                <p class="text-white/70 text-sm">160 Front Street West, Toronto • Financial District</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Color Changer -->
+    <button id="colorChanger" 
+            class="fixed bottom-6 right-6 w-14 h-14 glass-effect rounded-full flex items-center justify-center hover:bg-white/20 transition-all transform hover:scale-110 z-20">
+        <i data-lucide="palette" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Initialize Scripts -->
+    <script>
+        lucide.createIcons();
+        
+        // Enhanced gradient color schemes (excluding red tones)
+        const colorSchemes = [
+            // Deep Ocean Blue
+            {
+                primary: 'linear-gradient(135deg, #0c4a6e, #1e40af, #3730a3, #581c87)',
+                name: 'Deep Ocean'
+            },
+            // Cosmic Purple
+            {
+                primary: 'linear-gradient(135deg, #1e1b4b, #4c1d95, #6b21a8, #7e22ce)',
+                name: 'Cosmic Purple'
+            },
+            // Forest Emerald
+            {
+                primary: 'linear-gradient(135deg, #064e3b, #065f46, #047857, #059669)',
+                name: 'Forest Emerald'
+            },
+            // Arctic Teal
+            {
+                primary: 'linear-gradient(135deg, #134e4a, #0f766e, #0d9488, #14b8a6)',
+                name: 'Arctic Teal'
+            },
+            // Midnight Azure
+            {
+                primary: 'linear-gradient(135deg, #0f172a, #1e293b, #334155, #475569)',
+                name: 'Midnight Azure'
+            },
+            // Nebula Indigo
+            {
+                primary: 'linear-gradient(135deg, #312e81, #3730a3, #4338ca, #4f46e5)',
+                name: 'Nebula Indigo'
+            },
+            // Digital Cyan
+            {
+                primary: 'linear-gradient(135deg, #083344, #155e75, #0e7490, #0891b2)',
+                name: 'Digital Cyan'
+            },
+            // Professional Navy
+            {
+                primary: 'linear-gradient(135deg, #0f172a, #1e293b, #0f1419, #1a202c)',
+                name: 'Professional Navy'
+            }
+        ];
+        
+        let currentSchemeIndex = 0;
+        
+        function changeBackgroundColor() {
+            const body = document.getElementById('body-bg');
+            
+            // Move to next scheme
+            currentSchemeIndex = (currentSchemeIndex + 1) % colorSchemes.length;
+            const newScheme = colorSchemes[currentSchemeIndex];
+            
+            // Apply new gradient background
+            body.style.background = newScheme.primary;
+            
+            // Add smooth transition
+            body.style.transition = 'background 2s ease-in-out';
+            
+            // Optional: Log scheme name for debugging
+            console.log(`Switched to: ${newScheme.name}`);
+        }
+        
+        // Initialize with random color scheme
+        function initializeRandomColor() {
+            currentSchemeIndex = Math.floor(Math.random() * colorSchemes.length);
+            const initialScheme = colorSchemes[currentSchemeIndex];
+            const body = document.getElementById('body-bg');
+            
+            // Set initial background
+            body.style.background = initialScheme.primary;
+            console.log(`Initial theme: ${initialScheme.name}`);
+        }
+        
+        // Event listeners
+        document.getElementById('colorChanger').addEventListener('click', changeBackgroundColor);
+        
+        // Initialize
+        initializeRandomColor();
+        
+        // Auto change color every 25 seconds
+        setInterval(changeBackgroundColor, 25000);
+        
+        // Add subtle color variations on mouse movement
+        document.addEventListener('mousemove', function(e) {
+            const body = document.getElementById('body-bg');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            // Create subtle color shift based on mouse position
+            const hueShift = Math.round(x * 20 - 10); // -10 to +10 degrees
+            const brightness = 1 + (y * 0.1 - 0.05); // 0.95 to 1.05
+            
+            body.style.filter = `hue-rotate(${hueShift}deg) brightness(${brightness})`;
+        });
+        
+        // Add subtle entrance animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainContent = document.querySelector('.relative.z-10');
+            mainContent.style.opacity = '0';
+            mainContent.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                mainContent.style.transition = 'all 1s ease-out';
+                mainContent.style.opacity = '1';
+                mainContent.style.transform = 'translateY(0)';
+            }, 200);
+        });
+    </script>
+</body>
+</html> 
