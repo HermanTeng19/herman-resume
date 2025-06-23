@@ -1,0 +1,166 @@
+Herman Teng
+
+Senior Azure Data Engineer
+
+herman.teng@outlook.com | linkedin.com/in/hermanteng | github.com/HermanTeng19 | hermanteng19.github.io | 666-666-6666
+
+---
+
+PROFESSIONAL SUMMARY
+
+Microsoft Azure Certified Data Engineer with 10+ years of enterprise-scale data engineering and business intelligence experience in banking and finance. Expert in Azure Cloud Platform with proven track record of delivering high-performance data solutions supporting $2B+ daily transaction processing across TD Bank's major business units.
+
+Core Expertise: Python/PySpark Development • Azure Databricks & Data Factory • Power BI & Tableau Leadership • Enterprise Data Governance • Cost Optimization • Machine Learning Operations • Real-time Analytics
+
+Industry Impact: Led enterprise-wide BI platform adoption serving 10M+ customers • Managed 10TB+ daily data volumes • Achieved 99.9% system availability • Spearheaded AI/ML model deployment with 99.95% uptime
+
+---
+
+🏆 KEY ACHIEVEMENTS
+
+• Cost Optimization Expert: Achieved 35% Azure cost reduction and 70% performance improvement across enterprise data systems
+• Enterprise Scale Leadership: Managed $2B+ daily transaction processing with 99.9% system availability across 15+ business units
+• Big Data Processing: Engineered pipelines handling 10TB+ daily data volumes serving 10M+ banking customers
+• AI/ML Implementation: Deployed production AI models on Azure Kubernetes Services with 99.95% uptime supporting 500+ concurrent users
+• Business Intelligence Leadership: Led 25+ Tableau dashboards and enterprise-wide Power BI adoption across multiple business units
+
+---
+
+CORE COMPETENCIES
+
+Azure Cloud Architecture • Big Data Processing • Machine Learning Operations • Data Pipeline Engineering
+Business Intelligence Leadership • Cost Optimization • Enterprise Data Governance • Real-time Analytics
+DevOps Implementation • Cross-functional Team Leadership • Banking & Finance Domain • Regulatory Compliance
+
+---
+
+EDUCATION & CERTIFICATIONS
+
+Master of Science in Mathematics | Queens College, City University of New York
+Bachelor of Management in Marketing | Dalian Jiaotong University
+Microsoft Azure Certified Data Engineer Associate | Azure Data Fundamentals Certified
+
+---
+
+TECHNICAL SKILLS
+
+Cloud & Data Platforms
+
+Azure Cloud Ecosystem: Databricks • Data Factory • Kubernetes Services (AKS) • SQL Database • Synapse Analytics • ADLS • Purview • Cognitive Services
+Big Data Technologies: Databricks Delta Lakes • Lakehouse Architecture • Apache Spark • Real-time & Batch Processing • Apache Hudi
+Database Systems: SQL Server • Oracle • MySQL • DB2 • ACID Transaction Management
+
+Programming & Development
+
+Core Languages: Python • PySpark • Spark SQL • T-SQL • BASH Shell Script • PowerShell
+Data Engineering: ETL/ELT Pipelines • Schema Evolution • Data Versioning • Performance Optimization • MLOps
+DevOps & CI/CD: Git • GitHub Enterprise • Bitbucket • Azure DevOps • Kubernetes Orchestration
+
+Business Intelligence & Analytics
+
+Visualization Platforms: Power BI (Enterprise Leadership) • Tableau (25+ Dashboards) • Excel Advanced Analytics
+Data Modeling: Dimensional Models • Entity Relationship Diagrams • Data Governance Frameworks • Metadata Management
+Analytics & AI: Data Mining • Statistical Analysis • ML Model Deployment • Predictive Analytics • AI Model Operations
+
+Enterprise Systems & Compliance
+
+Project Management: Agile Methodology • Jira • Confluence • Cross-functional Team Leadership • Stakeholder Management
+Operating Systems: Linux (RHEL, Ubuntu) • Windows Server • AIX • HP Unix
+Compliance & Governance: GDPR • SOX • Banking Regulations • Audit Trail Management • Data Privacy
+
+---
+
+PROFESSIONAL EXPERIENCE
+
+Senior Data Engineer (IT Data Specialist)
+
+May 2021 – Present | Data as a Service (DaaS) | TD Bank
+
+• Enterprise BI Leadership: Spearheaded enterprise-wide Power BI adoption as primary analytics platform, establishing standardized frameworks across 15+ business units with 99.9% system availability
+
+• Strategic Platform Implementation: Pioneered early Power BI implementation aligned with senior leadership roadmap, developing comprehensive data curation and access control frameworks recognized by both technical and business stakeholders
+
+• Cross-functional Collaboration: Led Power BI community initiatives promoting platform adoption across business teams, enabling non-technical users to leverage advanced analytics and improving productivity by 40%
+
+• Tableau Excellence: Managed comprehensive development and optimization of 25+ critical BI dashboards serving Canadian Personal Banking operations with 10M+ customers
+
+• Performance Optimization: Implemented advanced processing algorithms and query optimization achieving 95% data accuracy improvement, 70% faster report generation, and eliminated data inconsistencies
+
+• Cost Management: Achieved 35% reduction in monthly Azure service costs through intelligent resource allocation, automated scaling policies, and efficient data storage management
+
+• AI/ML Implementation: Developed comprehensive P.I. data re-identification system using Azure Cognitive Services, enhancing data privacy compliance and reducing manual processing time by 75%
+
+• Metadata Management: Led enterprise-scale deployment of metadata management system using Microsoft Purview and Azure Data Catalog, improving data discoverability across 15+ business units
+
+• Technical Architecture: Provided technical leadership for complex IT data management frameworks supporting $2B+ daily transaction processing from design through production deployment
+
+• Big Data Engineering: Engineered high-performance data processing pipelines using Python, PySpark, and Apache Spark on Azure Databricks, reducing processing time by 60% while handling 10TB+ daily volumes
+
+• Kubernetes Operations: Orchestrated enterprise AI model deployment on Azure Kubernetes Services (AKS) with auto-scaling and load balancing, ensuring 99.95% uptime for 500+ concurrent users
+
+• Data Lake Architecture: Architected robust data pipelines using Databricks Delta Lakes for real-time ingestion and batch processing, improving data availability by 40% and reliability by 35%
+
+• DevOps Excellence: Championed DevOps best practices implementing GitHub Enterprise and Azure DevOps CI/CD pipelines, improving deployment frequency by 200% and reducing production incidents by 45%
+
+Senior Data Analyst (Senior Business Information Management Analyst)
+
+August 2017 – May 2021 | Canadian Personal Banking | TD Bank
+
+• Enterprise Infrastructure: Developed and maintained enterprise-scale BI infrastructure and data warehouse systems supporting 8M+ customers with 99.5% system availability
+
+• Digital Transformation: Applied advanced automation strategies to data platform modernization, leading 12+ development projects resulting in 40% improvement in data processing efficiency
+
+• Infrastructure Monitoring: Continuously monitored critical infrastructure performance including ETL processing and capacity planning, maintaining 99.8% SLA compliance
+
+• Technical Leadership: Provided strategic technical leadership and architectural solutions, leading end-to-end execution from design through production deployment of sophisticated data management frameworks
+
+• Data Integration: Conducted comprehensive analysis on 50+ new data feeds and operational workflows, enriching existing BI infrastructure and enabling advanced analytics capabilities for stakeholders
+
+• Requirements Analysis: Analyzed and translated complex business requirements into technical solutions, developing detailed data models including ERDs, dimensional models, and complete data lifecycle management strategies
+
+• Stakeholder Collaboration: Collaborated with technology partners and cross-functional teams to resolve critical issues and ensure compliance with established SLAs regarding data governance and security protocols
+
+Data Analyst (Business Information Management Analyst)
+
+November 2015 – August 2017 | Canadian Personal Banking | TD Bank
+
+• BI Infrastructure: Developed and maintained sophisticated Business Intelligence infrastructure and data warehouse for optimized analysis and timely reporting
+
+• Solution Design: Provided technical insights and solutions according to business requirements, leading execution from design to deployment
+
+• Data Analysis: Performed comprehensive data analysis on new data feeds and operational process workflows to enrich existing BI infrastructure
+
+• System Monitoring: Continuously monitored existing infrastructure including scheduled processing, infrastructure health, and capacity management
+
+---
+
+PROJECTS & ACHIEVEMENTS
+
+Enterprise AI/ML Platform Deployment
+
+• Deployed production-ready AI models on Azure Kubernetes Services serving 10M+ banking customers
+• Achieved 99.95% uptime with automated scaling supporting 500+ concurrent users
+• Implemented comprehensive monitoring and alerting systems ensuring optimal performance
+
+Cost Optimization Initiative
+
+• Led cloud cost optimization strategy achieving 35% reduction in monthly Azure service costs
+• Implemented intelligent resource allocation and automated scaling policies
+• Developed efficient data storage management practices saving $XXX annually
+
+Data Governance Framework
+
+• Established enterprise data governance policies using Databricks Unity Catalog and Azure Purview
+• Ensured compliance with GDPR, SOX, and banking regulatory requirements
+• Maintained comprehensive audit trails for all data operations across 15+ business units
+
+---
+
+TECHNICAL WRITING & THOUGHT LEADERSHIP
+
+Professional Blog: hermanteng19.github.io (25+ technical articles)
+GitHub Repository: github.com/HermanTeng19 (Open-source projects & code portfolio)
+Featured Articles: 
+• "Python Environment Setup for Implementation"
+• "Sandbox Solution for BI Reporting and Analytics" 
+• "Hadoop Data Side Load from SQL Server" 
