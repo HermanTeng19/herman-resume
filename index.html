@@ -190,19 +190,29 @@
                 max-height: 250px;
             }
             
-            /* Ensure content fits viewport */
+            /* Fix mobile scrolling and layout */
             body {
-                padding-bottom: 2rem;
+                min-height: 100vh;
+                padding: 1rem 0 2rem 0;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding-top: 2rem;
             }
             
-            /* Adjust main container spacing */
+            /* Adjust main container for mobile */
             .max-w-5xl {
-                padding-top: 1rem;
+                margin-top: 0;
+                padding-top: 0;
+            }
+            
+            /* Ensure floating elements don't interfere on mobile */
+            .floating-orb {
+                opacity: 0.3;
             }
         }
     </style>
 </head>
-<body class="animated-bg text-white font-sans min-h-screen flex items-center justify-center overflow-hidden" id="body-bg">
+<body class="animated-bg text-white font-sans min-h-screen flex items-center justify-center" id="body-bg">
     <!-- Floating Background Elements -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
         <div class="floating-orb orb-1"></div>
